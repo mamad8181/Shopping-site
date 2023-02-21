@@ -1,16 +1,66 @@
 
-import { Route, Routes } from 'react-router';
-import './App.css';
+import React from 'react'
+import { HomeScreen, ManagementLoginScreen } from 'screens'
+import { Route, Routes } from 'react-router'
+import './App.css'
+import { Header } from './layouts'
 
-function App() {
+export const routes = [
+  {
+    name: 'فروشگاه',
+    path: '/',
+    element: <HomeScreen/>
+  },
+  {
+    name: 'لب',
+    path: '/',
+    element: <HomeScreen/>
+  },
+  {
+    name: 'صورت',
+    path: '/',
+    element: <HomeScreen/>
+  },
+  {
+    name: 'چشم',
+    path: '/',
+    element: <HomeScreen/>
+  },
+  {
+    name: 'ابرو',
+    path: '/',
+    element: <HomeScreen/>
+  },
+  {
+    name: 'درباره ما',
+    path: '/',
+    element: <HomeScreen/>
+  },
+  {
+    name: 'راهنما',
+    path: '/',
+    element: <HomeScreen/>
+  },
+  {
+    name: '',
+    path: '/Admin',
+    element: <ManagementLoginScreen/>
+  }
+]
+
+const App = () => {
   return (
-    <div className='app'>
-      <Header/>
+    <div>
+      <Header>
       <Routes>
-        <Route path='/' element={<HomeScreen/>} />
+        {routes.map(route => <Route key={route.name} path={route.path} element={route.element} />
+        )}
+        {/* <Route path="/" element={<HomeScreen/>} /> */}
       </Routes>
+      </Header>
     </div>
-  );
+
+  )
 }
 
-export default App;
+export default App

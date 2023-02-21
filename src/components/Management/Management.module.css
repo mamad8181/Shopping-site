@@ -1,0 +1,14 @@
+.management_btn{
+    margin-top: -67px;
+    margin-left: -295px;
+}
+
+.show_text{
+    display: block;
+    padding-top: 4px;
+    padding-right: 8px;
+}
+
+.hide_text {
+    display: none;
+}
